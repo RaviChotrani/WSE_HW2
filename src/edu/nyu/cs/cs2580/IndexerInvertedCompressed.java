@@ -9,6 +9,28 @@ import edu.nyu.cs.cs2580.SearchEngine.Options;
  */
 public class IndexerInvertedCompressed extends Indexer {
 
+  public static void main(String[] args) {
+	new IndexerInvertedCompressed();
+  }
+  
+  public IndexerInvertedCompressed() {
+
+		try {
+			Options options = new Options("conf/engine.conf");
+			IndexerInvertedCompressed iido = new IndexerInvertedCompressed(options);
+			long start = System.currentTimeMillis();
+			iido.constructIndex();
+			//iido.loadIndex();
+			long end = System.currentTimeMillis();
+			System.out.println("time = " + (end - start));
+			
+			//testNextDoc(iido);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+  
   public IndexerInvertedCompressed(Options options) {
     super(options);
     System.out.println("Using Indexer: " + this.getClass().getSimpleName());
@@ -53,4 +75,6 @@ public class IndexerInvertedCompressed extends Indexer {
   public int documentTermFrequency(String term, String url) {
     return 0;
   }
+  
+  
 }
