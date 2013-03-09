@@ -679,11 +679,11 @@ public class IndexerInvertedDoconly extends Indexer implements Serializable {
 			IndexerInvertedDoconly iido = new IndexerInvertedDoconly(options);
 			long start = System.currentTimeMillis();
 			iido.constructIndex();
-			// iido.loadIndex(); 
+			//iido.loadIndex(); 
 			long end = System.currentTimeMillis();
 			System.out.println("time = " + (end - start));
 
-			// testNextDoc(iido);
+			 //testNextDoc(iido);
 		} catch (IOException e) { // TODO Auto-generated
 			e.printStackTrace();
 		}
